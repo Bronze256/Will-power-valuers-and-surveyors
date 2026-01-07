@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Will Power Valuers & Surveyors | Professional Property Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d2b4e;
+            --secondary-color: #d4af37;
+            --accent-color: #1e4a7c;
+            --light-color: #f8f9fa;
+            --dark-color: #222831;
+            --text-color: #444444;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            --border-radius: 12px;
+            --gradient: linear-gradient(135deg, #0d2b4e 0%, #1e4a7c 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+            font-size: 1.15rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 38px;
+            background: var(--gradient);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--secondary-color);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-secondary::before {
+            background: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            color: var(--primary-color);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(13, 43, 78, 0.2);
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 3px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 0.85rem;
+            color: #666;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--secondary-color);
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 180px 0 100px;
+            background: linear-gradient(rgba(13, 43, 78, 0.85), rgba(13, 43, 78, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 0;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .page-header h1 {
+            font-size: 3.8rem;
+            color: white;
+            margin-bottom: 25px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            max-width: 750px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .contact-highlight {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .contact-highlight-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .contact-highlight-icon {
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .contact-highlight-text h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-highlight-text a {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .contact-highlight-text a:hover {
+            color: var(--secondary-color);
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            margin-top: 40px;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .breadcrumb .separator {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Contact Info Section */
+        .contact-info-section {
+            position: relative;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            padding: 35px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 5px solid transparent;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-icon {
+            background: var(--secondary-color);
+            transform: rotateY(180deg);
+        }
+
+        .contact-details-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-details-content p {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .contact-details-content a {
+            color: var(--accent-color);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-details-content a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
+            background-color: var(--light-color);
+        }
+
+        .contact-form-container {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .form-header {
+            background: var(--gradient);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .form-header h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            padding: 50px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .form-group .required {
+            color: #e74c3c;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            background: #f9f9f9;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            background: white;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .form-note {
+            font-size: 0.95rem;
+            color: #666;
+            max-width: 400px;
+        }
+
+        .form-note .required {
+            color: #e74c3c;
+        }
+
+        /* Map Section */
+        .map-section {
+            position: relative;
+            padding: 0;
+        }
+
+        .map-container {
+            height: 500px;
+            width: 100%;
+            position: relative;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 43, 78, 0.3);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        .map-info-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            z-index: 3;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .map-info-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .map-info-card p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .map-info-card .btn {
+            margin-top: 20px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--light-color);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .faq-item.active {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--secondary-color);
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--secondary-color);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 30px 30px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Business Hours Section */
+        .hours-section {
+            position: relative;
+        }
+
+        .hours-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hours-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+        }
+
+        .hours-text p {
+            margin-bottom: 25px;
+            font-size: 1.15rem;
+        }
+
+        .hours-table {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .hours-row.day {
+            background: var(--gradient);
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .hours-row.day .hours-day {
+            color: white;
+        }
+
+        .hours-row.day .hours-time {
+            color: white;
+        }
+
+        .hours-day {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .hours-time {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .emergency-contact {
+            background: var(--gradient);
+            color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .emergency-contact h4 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .emergency-contact a {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gradient);
+            color: white;
+            padding: 100px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 70px;
+        }
+
+        .footer-logo .logo-text h1 {
+            background: linear-gradient(to right, #fff, var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-logo p {
+            margin-top: 20px;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-links h3, .footer-newsletter h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: white;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-links h3::after, .footer-newsletter h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+            color: rgba(255, 255, 255, 0.8);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+
+        .footer-newsletter p {
+            margin-bottom: 25px;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .newsletter-form {
+            display: flex;
+            position: relative;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 18px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .newsletter-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 13px 25px;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            background: #e6c247;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            opacity: 0.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .page-header h1 {
+                font-size: 3.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-content, .hours-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .page-header {
+                padding: 160px 0 80px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .map-info-card {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                margin: -100px auto 50px;
+                width: 90%;
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 85px;
+                left: -100%;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+                padding: 40px 0;
+                gap: 0;
+                z-index: 999;
+                border-top: 1px solid #eee;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 20px 0;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-header p {
+                font-size: 1.15rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-highlight {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-highlight-item {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .contact-form {
+                padding: 30px;
+            }
+            
+            .cta-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 140px 0 60px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .contact-item {
+                padding: 25px;
+            }
+            
+            .contact-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .form-note {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Will Power</h1>
+                        <p>VALUERS & SURVEYORS</p>
+                    </div>
+                </div>
+                
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tel:0705839845" class="btn btn-secondary">Call Now</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Get In Touch With Us</h1>
+                <p>Contact Will Power Valuers & Surveyors today for professional property valuation and surveying services. Our team is ready to assist you with accurate, reliable, and timely solutions.</p>
+                
+                <div class="contact-highlight">
+                    <div class="contact-highlight-item">
+                        <div class="contact-highlight-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-highlight-text">
+                            <h4>Call Us Now</h4>
+                            <a href="tel:0705839845">0705 839845</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-highlight-item">
+                        <div class="contact-highlight-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-highlight-text">
+                            <h4>Email Us</h4>
+                            <a href="mailto:info@willpowervaluers.com">info@willpowervaluers.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-highlight-item">
+                        <div class="contact-highlight-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-highlight-text">
+                            <h4>Visit Our Office</h4>
+                            <a href="#map">Princess Complex, Kasubi</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <span>Contact Us</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Information</h2>
+                <p>Reach out to us through any of the following channels. We're here to help with all your property valuation and surveying needs.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details-content">
+                            <h3>Visit Our Office</h3>
+                            <p>Princess Complex, Level 1</p>
+                            <p>Kasubi, Kampala, Uganda</p>
+                            <a href="https://maps.google.com/?q=Princess+Complex+Kasubi+Kampala+Uganda" target="_blank">Get Directions →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details-content">
+                            <h3>Call Us</h3>
+                            <p><a href="tel:0705839845">0705 839845</a></p>
+                            <p><a href="tel:078431600">0784 31600</a></p>
+                            <p>Fax: 0414 123456</p>
+                            <p>Available: Mon-Fri, 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details-content">
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:info@willpowervaluers.com">info@willpowervaluers.com</a></p>
+                            <p><a href="mailto:sales@willpowervaluers.com">sales@willpowervaluers.com</a></p>
+                            <p><a href="mailto:support@willpowervaluers.com">support@willpowervaluers.com</a></p>
+                            <p>Response Time: Within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <div class="form-header">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    </div>
+                    
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" class="form-control" placeholder="Your first name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" class="form-control" placeholder="Your last name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" class="form-control" placeholder="your.email@example.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" class="form-control" placeholder="0705 839845" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Required <span class="required">*</span></label>
+                            <select id="service" class="form-control" required>
+                                <option value="">Select a service</option>
+                                <option value="valuation">Property Valuation</option>
+                                <option value="surveying">Land Surveying</option>
+                                <option value="appraisal">Investment Appraisal</option>
+                                <option value="consultation">Consultation</option>
+                                <option value="other">Other Service</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject <span class="required">*</span></label>
+                            <input type="text" id="subject" class="form-control" placeholder="Brief subject of your inquiry" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" class="form-control" placeholder="Please provide details about your requirements..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <div class="form-note">
+                                <p><span class="required">*</span> Required fields. Your information is secure and will not be shared with third parties.</p>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="map-overlay"></div>
+            <div class="map-info-card">
+                <h3>Our Location</h3>
+                <p><i class="fas fa-map-marker-alt" style="color: var(--secondary-color); margin-right: 10px;"></i> Princess Complex, Level 1</p>
+                <p>Kasubi, Kampala, Uganda</p>
+                <p><i class="fas fa-clock" style="color: var(--secondary-color); margin-right: 10px;"></i> Mon-Fri: 8:00 AM - 6:00 PM</p>
+                <a href="https://maps.google.com/?q=Princess+Complex+Kasubi+Kampala+Uganda" target="_blank" class="btn">Get Directions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours Section -->
+    <section class="hours-section">
+        <div class="container">
+            <div class="hours-content">
+                <div class="hours-text">
+                    <h2>Business Hours</h2>
+                    <p>We are available during regular business hours to assist with your property valuation and surveying needs. For urgent matters outside these hours, please use our emergency contact number.</p>
+                    
+                    <div class="emergency-contact">
+                        <h4>Emergency Contact</h4>
+                        <p>For urgent property matters outside business hours:</p>
+                        <a href="tel:0705839845">0705 839845</a>
+                        <p>Available 24/7 for emergencies</p>
+                    </div>
+                </div>
+                
+                <div class="hours-table">
+                    <div class="hours-row day">
+                        <div class="hours-day">Day</div>
+                        <div class="hours-time">Hours</div>
+                    </div>
+                    <div class="hours-row">
+                        <div class="hours-day">Monday</div>
+                        <div class="hours-time">8:00 AM - 6:00 PM</div>
+                    </div>
+                    <div class="hours-row">
+                        <div class="hours-day">Tuesday</div>
+                        <div class="hours-time">8:00 AM - 6:00 PM</div>
+                    </div>
+                    <div class="hours-row">
+                        <div class="hours-day">Wednesday</div>
+                        <div class="hours-time">8:00 AM - 6:00 PM</div>
+                    </div>
+                    <div class="hours-row">
+                        <div class="hours-day">Thursday</div>
+                        <div class="hours-time">8:00 AM - 6:00 PM</div>
+                    </div>
+                    <div class="hours-row">
+                        <div class="hours-day">Friday</div>
+                        <div class="hours-time">8:00 AM - 6:00 PM</div>
+                    </div>
+                    <div class="hours-row">
+                        <div class="hours-day">Saturday</div>
+                        <div class="hours-time">9:00 AM - 1:00 PM</div>
+                    </div>
+                    <div class="hours-row">
+                        <div class="hours-day">Sunday</div>
+                        <div class="hours-time">Emergency Only</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services and contact process.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How quickly can you respond to my inquiry?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly at 0705 839845 for immediate assistance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What information do I need to provide for a property valuation?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For an initial quote, we need the property location, type (residential/commercial/industrial), size, and purpose of valuation. For a detailed valuation, we'll need property documents, recent photos, and access for inspection.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does a property valuation take?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The timeframe depends on the property type and complexity. Standard residential valuations take 2-3 business days, while commercial properties may take 5-7 business days. We'll provide an estimated timeline after the initial assessment.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you provide services outside Kampala?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide valuation and surveying services across Uganda. We have teams that can travel to different regions. Travel costs may apply for locations outside the greater Kampala area.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What are your payment terms?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For most services, we require a 50% deposit before commencing work, with the balance due upon completion and delivery of the report. We accept bank transfers, mobile money, and cash payments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Contact us today for professional, accurate, and reliable property valuation and surveying services. Our experienced team is ready to assist with your property needs.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="tel:0705839845" class="btn">Call Now: 0705 839845</a>
+                    <a href="#contactForm" class="btn btn-secondary">Send a Message</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1>Will Power</h1>
+                            <p>VALUERS & SURVEYORS</p>
+                        </div>
+                    </div>
+                    <p>With over 10 years of excellence in property valuation and surveying, we are your trusted partner for accurate, reliable, and professional property services across Uganda.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="contact.html">Get a Quote</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for the latest property trends, market insights, and company updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your Email Address" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                    <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.7;">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2012-2026 Will Power Valuers & Surveyors. All rights reserved. | Princess Complex, Level 1, Kasubi, Kampala, Uganda | Tel: 0705 839845 | 0784 31600</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Initialize Map (using Leaflet.js CDN)
+        function initMap() {
+            // Create a map instance
+            const map = L.map('map').setView([0.3476, 32.5825], 15);
+            
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+            
+            // Add a marker for the company location
+            const marker = L.marker([0.3476, 32.5825]).addTo(map);
+            
+            // Add a popup to the marker
+            marker.bindPopup(`
+                <b>Will Power Valuers & Surveyors</b><br>
+                Princess Complex, Level 1<br>
+                Kasubi, Kampala, Uganda<br>
+                <a href="https://maps.google.com/?q=0.3476,32.5825" target="_blank">Get Directions</a>
+            `).openPopup();
+            
+            // Add a circle around the marker
+            L.circle([0.3476, 32.5825], {
+                color: '#d4af37',
+                fillColor: '#d4af37',
+                fillOpacity: 0.1,
+                radius: 200
+            }).addTo(map);
+        }
+        
+        // Load Leaflet CSS and JS dynamically
+        function loadLeaflet() {
+            // Check if Leaflet is already loaded
+            if (typeof L === 'undefined') {
+                // Load Leaflet CSS
+                const leafletCSS = document.createElement('link');
+                leafletCSS.rel = 'stylesheet';
+                leafletCSS.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+                leafletCSS.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+                leafletCSS.crossOrigin = '';
+                document.head.appendChild(leafletCSS);
+                
+                // Load Leaflet JS
+                const leafletJS = document.createElement('script');
+                leafletJS.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+                leafletJS.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+                leafletJS.crossOrigin = '';
+                leafletJS.onload = initMap;
+                document.head.appendChild(leafletJS);
+            } else {
+                initMap();
+            }
+        }
+        
+        // Initialize map when DOM is loaded
+        document.addEventListener('DOMContentLoaded', loadLeaflet);
+        
+        // FAQ Accordion Functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ item
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const subject = document.getElementById('subject').value;
+            
+            // Show success message with animation
+            const formContainer = document.querySelector('.contact-form');
+            const originalContent = formContainer.innerHTML;
+            
+            formContainer.innerHTML = `
+                <div style="text-align: center; padding: 60px 30px;">
+                    <div style="width: 100px; height: 100px; background: #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; font-size: 3rem; color: #0d2b4e;">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h2 style="color: var(--primary-color); margin-bottom: 20px;">Thank You, ${firstName}!</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 30px; line-height: 1.6;">
+                        Your inquiry about <strong>${service}</strong> has been received successfully.<br>
+                        We will contact you at <strong>${phone}</strong> or <strong>${email}</strong> within 24 hours.
+                    </p>
+                    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
+                        <button id="backToForm" class="btn">Send Another Message</button>
+                        <a href="index.html" class="btn btn-secondary">Back to Home</a>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('backToForm').addEventListener('click', () => {
+                formContainer.innerHTML = originalContent;
+                // Re-attach event listener to the form
+                document.getElementById('contactForm').addEventListener('submit', contactForm);
+            });
+        });
+        
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = newsletterForm.querySelector('.newsletter-input');
+                
+                // Show success message
+                const originalBtnText = newsletterForm.querySelector('.newsletter-btn').textContent;
+                newsletterForm.querySelector('.newsletter-btn').innerHTML = '<i class="fas fa-check"></i>';
+                newsletterForm.querySelector('.newsletter-btn').style.background = '#4CAF50';
+                
+                setTimeout(() => {
+                    newsletterForm.querySelector('.newsletter-btn').textContent = originalBtnText;
+                    newsletterForm.querySelector('.newsletter-btn').style.background = '';
+                    emailInput.value = '';
+                    alert(`Thank you for subscribing! You will receive our updates shortly.`);
+                }, 1500);
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Phone number click tracking
+        document.querySelectorAll('a[href^="tel:"]').forEach(phoneLink => {
+            phoneLink.addEventListener('click', function() {
+                // You can add analytics tracking here
+                console.log('Phone number clicked:', this.href);
+            });
+        });
+    </script>
+</body>
+</html>
